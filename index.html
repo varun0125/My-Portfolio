@@ -983,6 +983,98 @@
             font-size: 1rem;
             line-height: 1.5;
         }
+
+        /* ===== Project Card Grid Layout ===== */
+        .project-header h3 {
+            margin-bottom: 1rem;
+            font-size: 1.6rem;
+            text-align: center;
+            color: #fff;
+        }
+
+        .project-media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 1.8rem;
+        }
+
+        .media-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .media-item img {
+            display: block;
+            width: 100%;
+            height: auto;
+            transition: transform 0.4s ease;
+        }
+
+        .media-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* ===== Video Poster + Play Overlay ===== */
+        .project-video .video-link {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .project-video .video-poster {
+            display: block;
+        }
+
+        .project-video .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            font-size: 3rem;
+            color: rgba(255, 255, 255, 0.85);
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            transition: color 0.3s ease;
+        }
+
+        .project-video:hover .play-icon {
+            color: #00c6ff;
+        }
+
+        /* ===== Content & Links ===== */
+        .project-content p {
+            font-size: 1rem;
+            color: rgba(228, 228, 228, 0.9);
+            line-height: 1.6;
+            margin-bottom: 1.2rem;
+        }
+
+        .project-links a {
+            display: inline-flex;
+            align-items: center;
+            font-weight: 600;
+            text-decoration: none;
+            color: var(--color-1);
+            transition: color 0.3s ease, transform 0.2s ease;
+        }
+
+        .project-links a i {
+            margin-right: 0.5rem;
+        }
+
+        .project-links a:hover {
+            color: var(--color-2);
+            transform: translateY(-2px);
+        }
+
+        /* ===== Responsive Tweaks ===== */
+        @media (max-width: 600px) {
+            .project-header h3 {
+                font-size: 1.4rem;
+            }
+        }
     </style>
 </head>
 
@@ -1045,49 +1137,52 @@
         </section>
 
         <!-- ======== Education Section ======== -->
-<section id="education">
-  <div class="container">
-    <h2 class="scroll-animate">Education</h2>
-    <div class="education-grid scroll-animate">
-      <!-- College -->
-      <div class="education-item glass-card">
-        <div class="education-image">
-          <img src="DAV.jpg" alt="DAV College Abohar  " loading="lazy" width="400" height="250">
-        </div>
-        <div class="education-content">
-          <h3>DAV COLLEGE ,ABOHAR</h3>
-          <p><strong>Bachelor of Computer Applications (B.C.A.)</strong><br>
-          Punjab University | 2022 – 2025<br>
-          <em>Graduated with First Class</em></p>
-        </div>
-      </div>
-      <!-- 12th -->
-      <div class="education-item glass-card">
-        <div class="education-image">
-          <img src="GOVT.png" alt="12th Grade" loading="lazy" width="400" height="250">
-        </div>
-        <div class="education-content">
-          <h3>Govt Senior Secondary School (BOYS), Malout</h3>
-          <p><strong>12<sup>th</sup> Grade (Commerce): A</strong><br>
-          PSEB Board | 2021 – 2022<br>
-          <em>Percentage: 83.4%</em></p>
-        </div>
-      </div>
-      <!-- 10th -->
-      <div class="education-item glass-card">
-        <div class="education-image">
-          <img src="SD.webp" alt="10th Grade" loading="lazy" width="400" height="250">
-        </div>
-        <div class="education-content">
-          <h3>SD Senior Secondary School, Malout</h3>
-          <p><strong>10<sup>th</sup> Grade: A+</strong><br>
-          PSEB Board | 2019 – 2020<br>
-          <em>Percentage: 92%</em></p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+        <section id="education">
+            <div class="container">
+                <h2 class="scroll-animate">Education</h2>
+                <div class="education-grid scroll-animate">
+                    <!-- College -->
+                    <div class="education-item glass-card">
+                        <div class="education-image">
+                            <img src="DAV.jpg" alt="DAV College Abohar  " loading="lazy" width="400" height="250">
+                        </div>
+                        <div class="education-content">
+                            <h3>DAV COLLEGE ,ABOHAR</h3>
+                            <p><strong>Bachelor of Computer Applications (B.C.A.)</strong><br>
+                                Punjab University | 2022 – 2025<br>
+                                <em>Graduated with First Class</em>
+                            </p>
+                        </div>
+                    </div>
+                    <!-- 12th -->
+                    <div class="education-item glass-card">
+                        <div class="education-image">
+                            <img src="GOVT.png" alt="12th Grade" loading="lazy" width="400" height="250">
+                        </div>
+                        <div class="education-content">
+                            <h3>Govt Senior Secondary School (BOYS), Malout</h3>
+                            <p><strong>12<sup>th</sup> Grade (Commerce): A</strong><br>
+                                PSEB Board | 2021 – 2022<br>
+                                <em>Percentage: 83.4%</em>
+                            </p>
+                        </div>
+                    </div>
+                    <!-- 10th -->
+                    <div class="education-item glass-card">
+                        <div class="education-image">
+                            <img src="SD.webp" alt="10th Grade" loading="lazy" width="400" height="250">
+                        </div>
+                        <div class="education-content">
+                            <h3>SD Senior Secondary School, Malout</h3>
+                            <p><strong>10<sup>th</sup> Grade: A+</strong><br>
+                                PSEB Board | 2019 – 2020<br>
+                                <em>Percentage: 92%</em>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
 
         <section id="skills">
@@ -1118,33 +1213,43 @@
         </section>
 
 
-        <section id="projects">
-            <div class="container">
-                <h2 class="scroll-animate">Featured Projects</h2>
-                <div class="projects-grid">
-                    <div class="project-card glass-card scroll-animate">
-                        <div class="project-image">
-                            <img src="Vehicle Management.png" alt="Data Dashboard Project" loading="lazy"
-                                decoding="async" width="1170" height="780">
-                        </div>
-                        <div class="project-content">
-                            <h3>Vehicle AutoManagement System</h3>
-                            <p>
-                                The Vehicle AutoManagement System is a Windows-based desktop application developed using
-                                VB.NET to streamline the management of vehicle records in an organization, transport
-                                business, or rental service.
-                            </p>
-                            <div class="project-links">
-                                <a href="https://github.com/varun0125/Vehicle-Management-System" target="_blank"
-                                    rel="noopener noreferrer">
-                                    <i class="fab fa-github"></i> GitHub
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+        <div class="project-card glass-card scroll-animate">
+            <div class="project-header">
+                <h3>Vehicle AutoManagement System</h3>
+            </div>
+
+            <div class="project-media-grid">
+                <!-- 1) Screenshot -->
+                <div class="media-item">
+                    <img src="Vehicle Management.png" alt="Vehicle AutoManagement System Screenshot" loading="lazy"
+                        decoding="async">
+                </div>
+
+                <!-- 2) Video poster + overlay -->
+                <div class="media-item project-video">
+                    <video src="VMS Tutorial.mkv" controls preload="metadata" width="100%" height="auto"
+                        poster="videos/vehicle-tutorial-poster.jpg">
+                        Your browser doesn’t support HTML5 video.
+                    </video>
                 </div>
             </div>
-        </section>
+
+            <div class="project-content">
+                <p>
+                    The Vehicle AutoManagement System is a Windows-based desktop application developed
+                    using VB.NET to streamline vehicle records management for organizations, fleets,
+                    or rental services.
+                </p>
+                <div class="project-links">
+                    <a href="https://github.com/varun0125/Vehicle-Management-System" target="_blank"
+                        rel="noopener noreferrer">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
 
         <section id="certifications">
             <div class="container">
