@@ -570,12 +570,18 @@
 
         /* Projects Section */
         .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            /* Slightly larger project cards */
-            gap: 2.5rem;
-            /* Increased gap */
-        }
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    align-items: stretch;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 
         .project-card {
             overflow: hidden;
@@ -909,23 +915,31 @@
                 /* Larger font for mobile nav */
             }
 
-            .skills-grid {
-                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-                /* Adjust skill grid for smaller screens */
-                gap: 1.2rem;
-            }
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+    justify-items: center;
+}
 
-            .skill-item {
-                padding: 1.5rem 0.8rem;
-            }
 
-            .skill-item i {
-                font-size: 3rem;
-            }
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 1.5rem; /* space between items */
+    justify-items: center; /* center skill cards inside grid */
+}
 
-            .skill-item p {
-                font-size: 1rem;
-            }
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    text-align: center;
+    width: 100%;
+}
+
 
             .projects-grid {
                 grid-template-columns: 1fr;
@@ -1115,9 +1129,8 @@
         <section id="home">
             <div class="container">
                 <div class="hero-text scroll-animate">
-                    <h1>Creative Web Developer</h1>
-                    <p class="hero-subtitle">I design and build beautiful, modern, and responsive websites with a
-                        passion for clean code and delightful user experiences.</p>
+                    <h1>Creative Data Analyst</h1>
+                    <p class="hero-subtitle">I analyze and interpret data to uncover insights, solve problems, and support smart decision-making. With skills in Python, SQL, Excel, and visualization tools, I transform raw data into meaningful stories and impactful dashboards.</p>
                     <a href="#projects" class="cta-button">View My Work</a>
                 </div>
                 <div class="hero-image-container scroll-animate" style="transition-delay: 200ms;">
@@ -1131,10 +1144,7 @@
                 <div class="glass-card scroll-animate">
                     <h2>About Me</h2>
                     <p>
-                        Hello! I'm Varun Sharma, a front-end developer based in a city of code and coffee. My journey
-                        into web development started with a fascination for how things work on the internet. Today, I
-                        specialize in creating stunning interfaces and seamless user interactions. When I'm not coding,
-                        you can find me exploring new hiking trails or experimenting with a new recipe in the kitchen.
+                        “Hello! I'm Varun Sharma, a BCA graduate and aspiring Data Analyst. My interest in data analytics started with a curiosity to explore patterns and insights hidden in information. I have gained skills in Python, SQL, Excel, and data visualization through projects and certifications. As a fresher, I am eager to apply my knowledge, learn from real-world challenges, and grow as a professional Data Analyst.”
                     </p>
                 </div>
             </div>
@@ -1199,7 +1209,17 @@
                     <div class="skill-item glass-card"><i class="fab fa-css3-alt"></i>
                         <p>CSS3</p>
                     </div>
-                   
+                   <div class="skill-item glass-card"><i class="fas fa-chart-pie"></i>
+                        <p>Power BI</p>
+                   </div>
+
+                   <div class="skill-item glass-card"><i class="fab fa-python"></i>
+                        <p>Python</p>
+                   </div>
+
+                   <div class="skill-item glass-card"><i class="fas fa-chart-line"></i>
+                        <p>Data Visualization</p>
+                    </div>
                     <div class="skill-item glass-card"><i class="fas fa-code"></i>
                         <p>VB.Net</p>
                     </div>
@@ -1213,24 +1233,20 @@
                 </div>
             </div>
         </section>
-
-           <section id="projects">
-    <!-- Project content -->
-
-
+<section id="projects">
+    <div class="container">
+        <h2 class="scroll-animate">My Projects</h2>
+        <!-- Vehicle Project -->
         <div class="project-card glass-card scroll-animate">
             <div class="project-header">
                 <h3>Vehicle AutoManagement System</h3>
             </div>
 
             <div class="project-media-grid">
-                <!-- 1) Screenshot -->
                 <div class="media-item">
-                    <img src="Vehicle Management.png" alt="Vehicle AutoManagement System Screenshot" loading="lazy"
-                        decoding="async">
+                    <img src="Vehicle Management.png" alt="Vehicle AutoManagement System Screenshot" loading="lazy" decoding="async">
                 </div>
 
-                <!-- 2) Video poster + overlay -->
                 <div class="media-item project-video">
                     <video src="VMS Tutorial.mkv" controls preload="metadata" width="100%" height="auto"
                         poster="videos/vehicle-tutorial-poster.jpg">
@@ -1246,15 +1262,50 @@
                     or rental services.
                 </p>
                 <div class="project-links">
-                    <a href="https://github.com/varun0125/Vehicle-Management-System" target="_blank"
-                        rel="noopener noreferrer">
+                    <a href="https://github.com/varun0125/Vehicle-Management-System" target="_blank" rel="noopener noreferrer">
                         <i class="fab fa-github"></i> View on GitHub
                     </a>
                 </div>
             </div>
         </div>
 
+        <!-- Hotel Dashboard Project -->
+        <div class="project-card glass-card scroll-animate">
+            <div class="project-header">
+                <h3>Hotel Booking Performance Dashboard</h3>
+            </div>
+
+            <div class="project-media-grid">
+                <div class="media-item">
+                    <img src="dashboard.png" alt="Hotel Booking Dashboard Screenshot" loading="lazy" decoding="async">
+                </div>
+
+                <div class="media-item project-video">
+                    <video src="DDA Tutorial.mkv" controls preload="metadata" width="100%" height="auto"
+                        poster="videos/Dashboard.jpg">
+                        Your browser doesn’t support HTML5 video.
+                    </video>
+                </div>
+            </div>
+
+            <div class="project-content">
+                <p>
+                    The <strong>Hotel Booking Performance Dashboard</strong> is built in Excel using pivot tables,
+                    slicers, and charts. It provides insights into key KPIs such as Total Bookings, Cancellation
+                    Rate, Occupancy Rate, Average Daily Rate (ADR), Revenue, Guest Mix, and Seasonal Trends.
+                    This dashboard helps hotel managers track performance, identify booking patterns, and make
+                    data-driven decisions.
+                </p>
+                <div class="project-links">
+                    <a href="https://varun0125.github.io/Dashboard_Data-Analyst/" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
+
 
 
 
@@ -1284,6 +1335,16 @@
                                 target="_blank" rel="noopener noreferrer">CSS</a></p>
                     </div>
                     <div class="skill-item glass-card">
+    <i class="fas fa-chart-pie"></i> <!-- Power BI icon substitute -->
+    <p>
+        <a href="https://www.simplilearn.com/skillup-certificate-landing?token=eyJjb3Vyc2VfaWQiOiIxNzIyIiwiY2VydGlmaWNhdGVfdXJsIjoiaHR0cHM6XC9cL2NlcnRpZmljYXRlcy5zaW1wbGljZG4ubmV0XC9zaGFyZVwvODcwNDgxMV84Nzk1Njg2MTc1Mzc5NTE0ODEzNi5wbmciLCJ1c2VybmFtZSI6IlZhcnVuIFNoYXJtYSJ9&utm_source=shared-certificate&utm_medium=lms&utm_campaign=shared-certificate-promotion&referrer=https%3A%2F%2Flms.simplilearn.com%2Fcourses%2F4211%2FPower%2520BI%2520for%2520Beginners%2Fcertificate%2Fdownload-skillup&%24web_only=true&_branch_match_id=1423662466839227684&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXL87MLcjJ1EssKNDLyczL1k%2FVN49Kjkh3DSosCE%2ByrytKTUstKsrMS49PKsovL04tsnXOKMrPTQUAxcj4bz8AAAA%3D"
+           target="_blank" rel="noopener noreferrer">
+           Power BI
+        </a>
+    </p>
+</div>
+
+                    <div class="skill-item glass-card">
                         <i class="fas fa-file-excel"></i> <!-- Excel -->
                         <p><a href="https://www.simplilearn.com/skillup-certificate-landing?token=eyJjb3Vyc2VfaWQiOiIxNzc3IiwiY2VydGlmaWNhdGVfdXJsIjoiaHR0cHM6XC9cL2NlcnRpZmljYXRlcy5zaW1wbGljZG4ubmV0XC9zaGFyZVwvODQzOTU5Nl84Nzk1Njg2MTc0OTMxNTEwNDg4Ni5wbmciLCJ1c2VybmFtZSI6IlZhcnVuIFNoYXJtYSJ9&utm_source=shared-certificate&utm_medium=lms&utm_campaign=shared-certificate-promotion&referrer=https%3A%2F%2Flms.simplilearn.com%2Fcourses%2F4277%2FIntroduction-to-MS-Excel%2Fcertificate%2Fdownload-skillup&%24web_only=true&_branch_match_id=1423662466839227684&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXL87MLcjJ1EssKNDLyczL1k%2FV962IKohy9PEwCEmyrytKTUstKsrMS49PKsovL04tsvUBqkpN8cwDAJ29yZxBAAAA"
                                 target="_blank" rel="noopener noreferrer">Excel</a></p>
@@ -1298,7 +1359,7 @@
                 <div class="glass-card scroll-animate" style="text-align:center;">
                     <p style="margin-bottom: 1.5rem;">Feel free to view or download a copy of my professional resume.
                     </p>
-                    <a href="https://drive.google.com/file/d/1KeNFq6fHslF286dLsGY9nyPV7KHAP9C1/view?usp=sharing"
+                    <a href="https://drive.google.com/file/d/10Vt5krlu-FBN3jvT24QQ0tlpIuz13uuc/view?usp=sharing"
                         class="cta-button" target="_blank" rel="noopener noreferrer">View Resume
                         (PDF)</a>
                 </div>
@@ -1309,16 +1370,8 @@
             <div class="container">
                 <div class="contact-form-container glass-card scroll-animate">
                     <h2>Get In Touch</h2>
-                    <p>Have a question or want to work together? Fill out the form below and I'll get back to you as
-                        soon as possible.</p>
-                    <form action="#" method="POST">
-                        <div class="form-group"><input type="text" name="name" placeholder="Your Name" required></div>
-                        <div class="form-group"><input type="email" name="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group"><textarea name="message" rows="5" placeholder="Your Message"
-                                required></textarea></div>
-                        <button type="submit" class="cta-button">Send Message</button>
-                    </form>
+                    <p>Have a question or want to work together? Connect me on linkedin, Instagram.</p>
+                    
                     <div class="social-links">
                         <a href="https://github.com/varun0125" target="_blank" rel="noopener noreferrer"
                             aria-label="GitHub Profile"><i class="fab fa-github"></i></a>
@@ -1327,6 +1380,9 @@
                                 class="fab fa-linkedin-in"></i></a>
                         <a href="https://x.com/VarunSh40096110" target="_blank" rel="noopener noreferrer"
                             aria-label="Twitter Profile"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/varunsharma.04/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Profile">
+    <i class="fab fa-instagram"></i>
+</a>
                     </div>
                 </div>
             </div>
