@@ -468,15 +468,26 @@
             /* Slightly larger text */
         }
 
-        /* Skills & Certifications Section */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            /* Slightly larger min-width for items */
-            gap: 1.8rem;
-            /* Increased gap */
-            text-align: center;
-        }
+        /* ✅ Fix Skills Grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Flexible columns */
+    gap: 2rem; /* spacing between cards */
+    justify-items: center; /* center skill cards */
+    align-items: stretch; /* make all cards equal height */
+}
+
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1.5rem;
+    width: 100%;
+    height: 100%; /* equal height */
+}
+
 
         .skill-item {
             padding: 2.2rem 1rem;
@@ -569,19 +580,21 @@
 
 
         /* Projects Section */
-        .projects-grid {
+/* ✅ Fix Projects Grid */
+.projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Flexible responsive grid */
     gap: 2rem;
     align-items: stretch;
+    justify-items: center;
 }
 
 .project-card {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    height: 100%; /* Make all project cards equal */
 }
-
 
         .project-card {
             overflow: hidden;
@@ -962,19 +975,23 @@
             margin-bottom: 3rem;
         }
 
-        .education-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            align-items: start;
-        }
+      /* ✅ Fix Education Grid */
+.education-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Flexible responsive */
+    gap: 2rem;
+    align-items: stretch;
+    justify-items: center;
+}
 
-        .education-item {
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-        }
-
+.education-item {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* uniform height */
+    border-radius: 18px;
+    overflow: hidden;
+    background: var(--glass-card-bg);
+}
         .education-image img {
             width: 100%;
             height: auto;
@@ -1236,6 +1253,7 @@
 <section id="projects">
     <div class="container">
         <h2 class="scroll-animate">My Projects</h2>
+
         <!-- Vehicle Project -->
         <div class="project-card glass-card scroll-animate">
             <div class="project-header">
@@ -1302,74 +1320,75 @@
                     </a>
                 </div>
             </div>
-           <div class="project-card glass-card scroll-animate">
+        </div>
+
+        <!-- E-Commerce Dashboard Project -->
+        <div class="project-card glass-card scroll-animate">
             <div class="project-header">
                 <h3>E-Commerce Sales Dashboard</h3>
             </div>
-           
-           
+
             <div class="project-media-grid">
-    <div class="media-item">
-        <img src="all time sale.png" alt="E-Commerce Sales Analysis Dashboard Screenshot" loading="lazy" decoding="async">
-    </div>
+                <div class="media-item">
+                    <img src="all time sale.png" alt="E-Commerce Sales Analysis Dashboard Screenshot" loading="lazy" decoding="async">
+                </div>
 
-    <div class="media-item project-video">
-        <video src="EComm.mkv" controls preload="metadata" width="100%" height="auto"
-            poster="videos/Ecommerce_Dashboard.jpg">
-            Your browser doesn’t support HTML5 video.
-        </video>
-    </div>
-</div>
+                <div class="media-item project-video">
+                    <video src="EComm.mkv" controls preload="metadata" width="100%" height="auto"
+                        poster="videos/Ecommerce_Dashboard.jpg">
+                        Your browser doesn’t support HTML5 video.
+                    </video>
+                </div>
+            </div>
 
-<div class="project-content">
-    <p>
-        The <strong>E-Commerce Sales Analysis Dashboard</strong> is built in Power BI to analyze sales performance,
-        profit trends, and customer insights. It tracks KPIs such as Total Sales, Profit, Quantity Sold, Top-Selling
-        Products, Regional Performance, and Sales by Category. This dashboard helps businesses monitor growth,
-        optimize product strategies, and improve decision-making through interactive visualizations.
-    </p>
-    <div class="project-links">
-        <a href="https://varun0125.github.io/Ecommerce-Sales-Dashboard/" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-github"></i> View on GitHub
-        </a>
-    </div>
-</div>
+            <div class="project-content">
+                <p>
+                    The <strong>E-Commerce Sales Analysis Dashboard</strong> is built in Power BI to analyze sales performance,
+                    profit trends, and customer insights. It tracks KPIs such as Total Sales, Profit, Quantity Sold, Top-Selling
+                    Products, Regional Performance, and Sales by Category. This dashboard helps businesses monitor growth,
+                    optimize product strategies, and improve decision-making through interactive visualizations.
+                </p>
+                <div class="project-links">
+                    <a href="https://varun0125.github.io/Ecommerce-Sales-Dashboard/" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
 
+        <!-- Blinkit Dashboard Project -->
         <div class="project-card glass-card scroll-animate">
-    <div class="project-header">
-        <h3>Blinkit Sales Dashboard</h3>
-    </div>
+            <div class="project-header">
+                <h3>Blinkit Sales Dashboard</h3>
+            </div>
 
-    <div class="project-media-grid">
-        <div class="media-item">
-            <img src="blinkit sales dashboard.png" alt="Blinkit Sales Dashboard Screenshot" loading="lazy" decoding="async">
-        </div>
+            <div class="project-media-grid">
+                <div class="media-item">
+                    <img src="blinkit sales dashboard.png" alt="Blinkit Sales Dashboard Screenshot" loading="lazy" decoding="async">
+                </div>
 
-        <div class="media-item project-video">
-            <video src="Blinkit Tutorial.mp4" controls preload="metadata" width="100%" height="auto"
-                poster="videos/Blinkit_Dashboard.jpg">
-                Your browser doesn’t support HTML5 video.
-            </video>
-        </div>
-    </div>
+                <div class="media-item project-video">
+                    <video src="Blinkit Tutorial.mp4" controls preload="metadata" width="100%" height="auto"
+                        poster="videos/Blinkit_Dashboard.jpg">
+                        Your browser doesn’t support HTML5 video.
+                    </video>
+                </div>
+            </div>
 
-    <div class="project-content">
-        <p>
-            The <strong>Blinkit Sales Dashboard</strong> is designed in Power BI to provide in-depth analysis of 
-            sales, orders, and customer behavior. It highlights key KPIs such as Total Sales, Average Order Value, 
-            Top-Performing Categories, Regional Sales Distribution, and Customer Preferences. This interactive dashboard 
-            enables businesses to track performance, identify growth opportunities, and make data-driven decisions 
-            effectively.
-        </p>
-        <div class="project-links">
-            <a href="https://varun0125.github.io/Blinkit_Sales_Dashboard/" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-github"></i> View on GitHub
-            </a>
-        </div>
-    </div>
-</div>
-
-
+            <div class="project-content">
+                <p>
+                    The <strong>Blinkit Sales Dashboard</strong> is designed in Power BI to provide in-depth analysis of 
+                    sales, orders, and customer behavior. It highlights key KPIs such as Total Sales, Average Order Value, 
+                    Top-Performing Categories, Regional Sales Distribution, and Customer Preferences. This interactive dashboard 
+                    enables businesses to track performance, identify growth opportunities, and make data-driven decisions 
+                    effectively.
+                </p>
+                <div class="project-links">
+                    <a href="https://varun0125.github.io/Blinkit_Sales_Dashboard/" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 </section>
